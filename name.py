@@ -3,19 +3,14 @@ import sys
 
 def main(): 
     arg = sys.argv
-    error_line = True
-    if len(arg) < 2:
-        output = "Too few arguments!"
-    elif len(arg) > 2:
-        output = "Too many arguments!"
-    else:
-        name = arg[1]
-        output = "Hello! My name is " + name
-        error_line = False
-
     subtext = " Please read README.md"
+
+    if len(arg) < 2:
+        sys.exit("Too few arguments!" + subtext)
+    elif len(arg) > 2:
+        sys.exit("Too many arguments!" + subtext)
     
-    print(output + (subtext if error_line else ""))
+    print("Hello! My name is " + arg[1])
 
 if __name__ == "__main__":
     main()
